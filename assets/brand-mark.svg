@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Flagg Electric brand mark</title>
+  <desc id="desc">A copper lightning bolt over a blueprint grid.</desc>
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#b97937"/>
+      <stop offset="100%" stop-color="#1b3150"/>
+    </linearGradient>
+  </defs>
+  <rect width="160" height="160" rx="18" fill="#f7f3ea"/>
+  <g opacity="0.23" stroke="#cbbfae" stroke-width="1">
+    <path d="M24 24H136M24 44H136M24 64H136M24 84H136M24 104H136M24 124H136"/>
+    <path d="M24 24V136M44 24V136M64 24V136M84 24V136M104 24V136M124 24V136"/>
+  </g>
+  <circle cx="80" cy="80" r="48" fill="url(#g)" opacity="0.16"/>
+  <path d="M90 16 52 84h26l-8 60 38-70H82l8-58z" fill="#b97937"/>
+  <path d="M36 116c18-10 34-14 44-14 16 0 28 5 44 14" fill="none" stroke="#1b3150" stroke-width="4" stroke-linecap="round"/>
+</svg>
