@@ -31,9 +31,9 @@ FORM: Position 7 of the grounded candidate list (seed key 1048cabf, direction sc
 ## Typography
 
 - Barlow regular (400) and bold (700), self-hosted. No display face — the world is work-order paperwork, not poster art.
-- Display headings: Barlow Bold, uppercase, tight leading (.88-.9), negative tracking (-.03em). Hero title scales to 120px, section headings to 84px (reduced from a uniform 96px so scale carries hierarchy), contact phone to 84px.
+- Display headings: Barlow Bold, uppercase, tight leading (.88-.9), negative tracking (-.03em). Hero title scales to clamp(56px,6.6vw,96px). Section headings use a TWO-TIER system: section labels (WORK ORDER, FIELD NOTES, BEFORE YOU CALL) at clamp(28px,3.2vw,40px) with a rule beneath; statement headings (BASED IN CAMDENTON., LET'S GET YOU CONNECTED.) hold display scale at clamp(44px,6vw,84px). Contact phone to 84px.
 - Body: Barlow Regular, 17-18px, line-height 1.55-1.6.
-- Hand-inked elements (margin towns, photo caption): Caveat with Segoe Script / Bradley Hand fallback — script face for pencil annotations only.
+- Hand-inked elements (margin towns, photo caption): Caveat, self-hosted from assets/caveat.ttf (variable weight 400-700), with Segoe Script / Bradley Hand fallback — script face for pencil annotations only. Caveat is shipped under the same SIL OFL as Barlow.
 
 ## Motion
 
@@ -48,7 +48,7 @@ Reduced motion: stamp lands at final opacity with no scale animation. Underline 
 ## Components
 
 - Header: paper background, logo left, nav center, bordered phone number right (hidden on mobile, bottom bar carries it). Border-bottom 3px toner.
-- Hero: two-column grid, stamp-mark (92px, 4px border, -12deg) with press animation, "JOB" tag with 3px border, orange CTA with 3px border and drop shadow, photo with pencil caption, scrolling town strip with 3px toner top border.
+- Hero: viewport-locked (height:calc(100vh - 96px), clamped 560-760px) so the whole ticket — headline, stamp, JOB tag, CTA and the three service tags — fits above the fold at every common laptop size. Verified at 1440x900, 1366x768, 1280x720, 1280x800, 1152x720, 1536x864, 1600x900, 1680x1050 and 1920x1080. Below 1050px the hero unstacks to height:auto. Two-column grid, stamp-mark (92px, 4px border, -12deg, opacity 1) with press animation, "JOB" tag with 3px border, orange CTA with 3px border and drop shadow, photo with pencil caption, scrolling town strip with 3px toner top border. Header and footer brand marks use mix-blend-mode:multiply so the logo's white ground drops out against the paper.
 - Services: ruled work-order rows with 34px checkboxes (3px border), hover reveals 5px orange left-stripe and ticking checkmark. Row padding 44px, bottom border 3px.
 - Gallery: 3px-bordered figure cards with orange top-stripe on hover, staggered lay-down entrance, asymmetric grid (wide + two square). Images at 380px/460px height.
 - Proof: 3px dashed wax border, rotated -1deg, 110px A+ mark, 8px offset frame. Reads as a rubber stamp on paper.
@@ -60,6 +60,7 @@ Reduced motion: stamp lands at final opacity with no scale animation. Underline 
 
 - Mobile: ≤760px. Intermediate: ≤1050px. Desktop: 1051px+.
 - Section padding: 100px/5% desktop, 70px/5% tablet, 60px/5% mobile.
+- scroll-margin-top:110px on sections so anchor jumps clear the 96px header.
 - Hero: min-height calc(100vh - 96px) desktop, stacked on mobile with photo first.
 
 ## Imagery
@@ -73,6 +74,8 @@ Reduced motion: stamp lands at final opacity with no scale animation. Underline 
 
 - Skip link, visible focus rings, aria-labels on icon-only links, reduced-motion support, keyboard-operable FAQ, Escape closes mobile menu, semantic heading order, alt text on all images.
 - Contrast: all text meets WCAG AA (4.5:1 body, 3:1 large). Tokens tuned to pass.
+- Pencil annotations (.pencil) are --pencil #5a5348, NOT --paper: on the manila hero-photo ground --paper measured 1.28:1. Now 5.20:1.
+- The EST. 2009 stamp runs at opacity 1, not .85: the 0.85 compositing over paper-dark measured 4.23:1. At full opacity the same wax measures 6.10:1.
 - Motion: prefers-reduced-motion removes all spatial movement, preserves opacity and state transitions.
 
 ## Provenance
@@ -87,5 +90,15 @@ Critique pass October 10, 2026 (score 23/36, two P0s found and both addressed):
 - Section headings reduced from a uniform 96px to clamp(44px,6vw,84px) so scale carries hierarchy.
 - FAQ gained a cost question addressing the estimate fear beat.
 - Detector: 12 findings -> 8. Remaining: 5 cramped-padding (section-vs-wrapper false positives), 1 cream-palette (deliberate brand surface), 1 grid-background (blueprint surface by the rule's own exception), 1 low-contrast at 1.3:1 (--paper text never co-occurs on manila; false positive).
+
+Second critique pass October 10, 2026 (score 26/28, heuristics 3 and 7 n/a for a Persuade surface; not comparable to the prior 23/36 which used a different applicable set). Three P1s found and all fixed:
+- Hero service tags were entirely below the fold on every common laptop viewport (147px below at 1440x900, 249px at 1366x768). Fixed by locking hero height to the viewport with a 560-760px clamp, reducing the hero title from 120px to clamp(56px,6.6vw,96px), and tightening the hero's internal rhythm. Verified above the fold at eleven desktop viewports.
+- Five uniform 84px headings still flattened the hierarchy the first pass claimed to fix. Fixed with a genuine two-tier system: section labels at clamp(28px,3.2vw,40px) under a rule, only the two statement headings at display scale.
+- Caveat was specified but never shipped, so the signature pencil voice resolved to Segoe Script on Windows and generic cursive everywhere else (a 21.6% width divergence). Fixed by self-hosting Caveat from assets/caveat.ttf. Also removed assets/barlow-condensed.ttf (87KB, referenced by nothing, which made SOURCES.md's Condensed claim false).
+Two P2 contrast failures also fixed:
+- .pencil at 1.28:1 (--paper on manila) — recolored to --pencil, now 5.20:1.
+- .stamp-mark at 4.23:1 from opacity:.85 — opacity removed, now 6.10:1.
+Photo credit moved from mid-narrative into the footer as a provenance line. Header and footer logos now use mix-blend-mode:multiply to drop the white ground.
+Detector after this pass: 7 local findings (5 cramped-padding false positives disproven by measured computed padding of 100px/72px; cream-palette and codex-grid-background are deliberate world choices). The live-URL scan reports only those two, and both low-contrast findings are gone.
 
 Screenshots: qa/redesign-desktop.png, qa/redesign-mobile.png, qa/redesign-mobile-bottom.png (pre-critique), qa/v2-full.png (post-critique desktop), qa/v2-mobile-full.png (post-critique mobile). Previous designs backed up as index-old.html and index-old-redesign.html.
