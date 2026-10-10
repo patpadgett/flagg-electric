@@ -60,6 +60,9 @@ Reduced motion: stamp lands at final opacity with no scale animation. Underline 
 
 - Mobile: ≤760px. Intermediate: ≤1050px. Desktop: 1051px+.
 - Section padding: 100px/5% desktop, 70px/5% tablet, 60px/5% mobile.
+- Spacing scale: 4px base, `--s1` 4px through `--s10` 100px. Section rhythm uses --s7 (48px) head-to-content and --s8/--s9 (64/80px) column gaps.
+- Grid alignment: `.about` uses `align-items:end` so the BBB proof box's bottom edge sits flush with the text block's CTA link (measured 6px); `.questions` uses `align-items:start` so the section label top-aligns with the accordion's first rule; `.contact` uses `align-items:center` because both columns carry equal display weight.
+- FAQ heading is static on all breakpoints (a sticky heading pinned at an arbitrary offset rather than holding its place — reverted in the October 2026 layout pass).
 - scroll-margin-top:110px on sections so anchor jumps clear the 96px header.
 - Hero: min-height calc(100vh - 96px) desktop, stacked on mobile with photo first.
 
@@ -100,5 +103,13 @@ Two P2 contrast failures also fixed:
 - .stamp-mark at 4.23:1 from opacity:.85 — opacity removed, now 6.10:1.
 Photo credit moved from mid-narrative into the footer as a provenance line. Header and footer logos now use mix-blend-mode:multiply to drop the white ground.
 Detector after this pass: 7 local findings (5 cramped-padding false positives disproven by measured computed padding of 100px/72px; cream-palette and codex-grid-background are deliberate world choices). The live-URL scan reports only those two, and both low-contrast findings are gone.
+
+Layout pass October 10, 2026 (structure only, visual world unchanged):
+- Established a documented spacing scale (`--s1` 4px through `--s10` 100px, 4px base) replacing one-off pixel values in the grid gaps and row rhythm.
+- `.about` changed from `align-items:center` to `end`: the BBB proof box was dead-centered against a 534px text block, leaving 92px of void beneath it. Bottom edges now flush (measured 6px apart).
+- `.questions` gained `align-items:start` and its heading lost the default bottom margin: the section label was floating above dead space while the accordion ran 137px lower. Label and first accordion rule now share the same top edge.
+- Section-head rhythm tightened: margin-bottom 56px -> 48px, note margin-top 18px -> 14px, service row padding 44px -> 36px, FAQ summary padding 30px -> 26px.
+- A sticky FAQ heading was tried and reverted: `position:sticky;top:120px` pinned the label mid-viewport instead of holding its place, and created a 390px dead column.
+- Verified: no horizontal overflow at 320/375/390/768/1024/1366/1440; hero CTA and service tags above the fold on desktop; proof box flush on desktop and stacked correctly at 768 and 390; heading/accordion top-aligned on desktop.
 
 Screenshots: qa/redesign-desktop.png, qa/redesign-mobile.png, qa/redesign-mobile-bottom.png (pre-critique), qa/v2-full.png (post-critique desktop), qa/v2-mobile-full.png (post-critique mobile). Previous designs backed up as index-old.html and index-old-redesign.html.
