@@ -1,0 +1,129 @@
+[
+  {
+    "name": "desktop",
+    "overflow": false,
+    "images": [
+      {
+        "src": "assets/business-profile.jpg",
+        "loaded": true
+      },
+      {
+        "src": "assets/dock-night.jpg",
+        "loaded": true
+      },
+      {
+        "src": "assets/dock-day.jpg",
+        "loaded": true
+      },
+      {
+        "src": "assets/panel.jpg",
+        "loaded": true
+      },
+      {
+        "src": "assets/dock-fan.jpg",
+        "loaded": true
+      }
+    ],
+    "invalidAnchors": [],
+    "phones": [
+      "tel:+15732863406",
+      "tel:+15732863406",
+      "tel:+15732863406",
+      "tel:+15732863406",
+      "tel:+15732863406",
+      "tel:+15732863406",
+      "tel:+15732863406",
+      "tel:+15732863406",
+      "tel:+15732863406"
+    ],
+    "h1": 1,
+    "faqOpen": true,
+    "errors": []
+  },
+  {
+    "name": "mobile",
+    "overflow": false,
+    "images": [
+      {
+        "src": "assets/business-profile.jpg",
+        "loaded": true
+      },
+      {
+        "src": "assets/dock-night.jpg",
+        "loaded": true
+      },
+      {
+        "src": "assets/dock-day.jpg",
+        "loaded": true
+      },
+      {
+        "src": "assets/panel.jpg",
+        "loaded": true
+      },
+      {
+        "src": "assets/dock-fan.jpg",
+        "loaded": true
+      }
+    ],
+    "invalidAnchors": [],
+    "phones": [
+      "tel:+15732863406",
+      "tel:+15732863406",
+      "tel:+15732863406",
+      "tel:+15732863406",
+      "tel:+15732863406",
+      "tel:+15732863406",
+      "tel:+15732863406",
+      "tel:+15732863406",
+      "tel:+15732863406"
+    ],
+    "h1": 1,
+    "menuOpen": "true",
+    "menuClosed": "false",
+    "faqOpen": true,
+    "errors": []
+  },
+  {
+    "name": "small-mobile",
+    "overflow": false,
+    "images": [
+      {
+        "src": "assets/business-profile.jpg",
+        "loaded": true
+      },
+      {
+        "src": "assets/dock-night.jpg",
+        "loaded": true
+      },
+      {
+        "src": "assets/dock-day.jpg",
+        "loaded": true
+      },
+      {
+        "src": "assets/panel.jpg",
+        "loaded": true
+      },
+      {
+        "src": "assets/dock-fan.jpg",
+        "loaded": true
+      }
+    ],
+    "invalidAnchors": [],
+    "phones": [
+      "tel:+15732863406",
+      "tel:+15732863406",
+      "tel:+15732863406",
+      "tel:+15732863406",
+      "tel:+15732863406",
+      "tel:+15732863406",
+      "tel:+15732863406",
+      "tel:+15732863406",
+      "tel:+15732863406"
+    ],
+    "h1": 1,
+    "menuOpen": "true",
+    "menuClosed": "false",
+    "faqOpen": true,
+    "errors": []
+  }
+]
