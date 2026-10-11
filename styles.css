@@ -123,7 +123,7 @@ p{max-width:65ch}
 .service-list article:hover .check::after{opacity:1;transform:scale(1)}
 .service-list article:hover .check{border-color:var(--orange)}
 .service-body{flex:1;min-width:0}
-.service-list h3{font-weight:700;font-size:36px;line-height:1.05;text-transform:uppercase;letter-spacing:.01em;color:var(--toner)}
+.service-list h3{font-weight:700;font-size:28px;line-height:1.1;text-transform:uppercase;letter-spacing:.02em;color:var(--toner)}
 .service-list p{font-size:16px;color:var(--pencil);max-width:560px;margin-top:8px;line-height:1.55}
 .service-list a{width:56px;height:56px;display:grid;place-items:center;border:3px solid var(--toner);flex-shrink:0;background:transparent;color:var(--toner);transition:all .2s;text-decoration:none}
 .service-list a:hover{background:var(--toner);color:var(--paper);transform:scale(1.05)}
@@ -147,12 +147,12 @@ p{max-width:65ch}
 .gallery figcaption{padding:16px 18px;display:flex;flex-direction:column;gap:3px}
 .gallery figcaption strong{font-weight:700;font-size:18px;text-transform:uppercase;letter-spacing:.02em;color:var(--toner)}
 .gallery figcaption span{font-size:14px;color:var(--pencil-light)}
-.photo-credit{font-size:12px;color:var(--pencil-light);margin-top:32px;font-style:italic;max-width:600px;line-height:1.4}
+.photo-credit{font-size:14px;color:var(--pencil-light);margin-top:32px;font-style:italic;max-width:600px;line-height:1.5}
 
 /* ABOUT */
 .about{display:grid;grid-template-columns:1.2fr 1fr;gap:var(--s9);align-items:end}
 .about-text h2{font-weight:700;font-size:clamp(44px,6vw,84px);line-height:.9;letter-spacing:-.03em;text-transform:uppercase;color:var(--toner)}
-.about-text p{margin-top:22px;color:var(--pencil);font-size:16px;line-height:1.6}
+.about-text p{margin-top:22px;color:var(--pencil);font-size:16px;line-height:1.6;max-width:62ch}
 .about-text .text-link{margin-top:28px}
 .text-link{font-size:14px;font-weight:700;display:inline-flex;gap:14px;align-items:center;text-transform:uppercase;letter-spacing:.06em;color:var(--orange);text-decoration:none;transition:gap .2s;padding:11px 0}
 .text-link:hover{gap:20px;color:var(--orange-deep)}
@@ -167,7 +167,7 @@ p{max-width:65ch}
 .proof-label{font-weight:700;font-size:13px;letter-spacing:.16em;color:var(--wax);text-transform:uppercase;border:2px solid var(--wax);padding:4px 10px;transform:rotate(4deg)}
 .proof h3{font-weight:700;font-size:22px;line-height:1.15;margin-top:24px;text-transform:uppercase;letter-spacing:.02em;color:var(--toner)}
 .proof p{font-size:16px;margin-top:12px;color:var(--pencil);line-height:1.55}
-.proof a{font-size:12px;display:inline-block;margin-top:28px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--orange);text-decoration:none;border-bottom:2px solid var(--orange);padding:19px 2px 2px;transition:color .2s}
+.proof a{font-size:13px;display:inline-block;margin-top:28px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--orange);text-decoration:none;border-bottom:2px solid var(--orange);padding:19px 2px 2px;transition:color .2s}
 .proof a:hover{color:var(--orange-deep)}
 
 /* FAQ */
@@ -188,14 +188,14 @@ details a:hover{color:var(--orange-deep)}
 .contact{display:grid;grid-template-columns:1fr 1fr;gap:var(--s9);align-items:center;background:var(--toner);color:var(--paper)}
 .contact h2{font-weight:700;font-size:clamp(44px,6vw,84px);line-height:.9;letter-spacing:-.03em;text-transform:uppercase}
 .contact .accent{color:var(--orange-hot)}
-.contact p{margin-top:24px;font-size:17px;color:rgba(244,240,228,.75);line-height:1.6}
+.contact p{margin-top:24px;font-size:16px;color:rgba(244,240,228,.75);line-height:1.65;max-width:58ch}
 .contact-action{display:flex;flex-direction:column;align-items:flex-start;gap:0}
 .contact-action a{display:block;text-decoration:none;margin-bottom:20px;transition:opacity .2s}
 .contact-action a:hover{opacity:.85}
-.contact-phone{font-weight:700;font-size:clamp(48px,6vw,84px);line-height:.92;letter-spacing:-.03em;color:var(--paper);border-bottom:4px solid var(--orange-hot);padding-bottom:12px;display:block;transition:color .2s}
+.contact-phone{font-weight:700;font-size:clamp(48px,6vw,84px);line-height:.9;letter-spacing:-.03em;color:var(--paper);border-bottom:4px solid var(--orange-hot);padding-bottom:12px;display:block;transition:color .2s}
 .contact-action a:hover .contact-phone{color:var(--orange-hot)}
 .contact-label{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange-hot)}
-.contact-action>p{margin-top:16px;font-size:16px;color:rgba(244,240,228,.75);line-height:1.6}
+.contact-action>p{margin-top:16px;font-size:16px;color:rgba(244,240,228,.75);line-height:1.65}
 
 /* FOOTER */
 footer{background:var(--paper-dark);padding:60px 5% 40px;border-top:2px solid var(--rule)}
@@ -210,7 +210,7 @@ footer>p{font-size:16px;color:var(--pencil);margin-bottom:28px;line-height:1.55}
 .footer-brand:hover{opacity:.75}
 
 /* MOBILE CALL BAR */
-.mobile-call{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--orange);color:var(--paper);text-align:center;padding:16px;font-size:16px;font-weight:700;text-decoration:none;z-index:90;border-top:2px solid var(--orange-hot-light);transition:background .15s}
+.mobile-call{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--orange);color:var(--paper);text-align:center;padding:16px;font-size:16px;font-weight:400;text-decoration:none;z-index:90;border-top:2px solid var(--orange-hot-light);transition:background .15s}
 .mobile-call strong{font-size:18px;font-weight:700}
 .mobile-call:active{background:var(--wax)}
 
@@ -223,7 +223,7 @@ footer>p{font-size:16px;color:var(--pencil);margin-bottom:28px;line-height:1.55}
   .hero-tags{order:5;margin-top:4px}
   .hero-cta{order:6;margin-top:12px;padding:14px 20px}
   .hero-job-line{gap:10px;margin-top:14px;padding-top:10px}
-  .job-desc{font-size:15px}
+  .job-desc{font-size:16px}
   .stamp-mark{top:16px;right:5%}
   .hero-margin{overflow-x:auto;padding:0}
   .section{padding:70px 5%}
@@ -270,10 +270,10 @@ footer>p{font-size:16px;color:var(--pencil);margin-bottom:28px;line-height:1.55}
   .gallery .wide img{height:320px}
   .section-head h2,.about-text h2,.contact h2{font-size:clamp(26px,7vw,36px)}
   .about-text h2,.contact h2{letter-spacing:-.02em;line-height:.92;border-bottom:none;padding-bottom:0}
-  .service-list h3{font-size:24px}
+  .service-list h3{font-size:22px}
   .proof-mark{font-size:72px}
   .footer-brand img{width:110px}
-  .mobile-call{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:20;background:var(--orange);color:var(--paper);padding:16px 6%;padding-bottom:max(16px,env(safe-area-inset-bottom));justify-content:space-between;text-decoration:none;font-size:13px;border-top:2px solid var(--orange-hot-light);font-weight:700;letter-spacing:.06em;text-transform:uppercase;align-items:center;transition:background .15s}
+  .mobile-call{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:20;background:var(--orange);color:var(--paper);padding:16px 6%;padding-bottom:max(16px,env(safe-area-inset-bottom));justify-content:space-between;text-decoration:none;font-size:13px;border-top:2px solid var(--orange-hot-light);font-weight:400;letter-spacing:.06em;text-transform:uppercase;align-items:center;transition:background .15s}
   .mobile-call:active{background:var(--wax)}
   body{padding-bottom:calc(70px + env(safe-area-inset-bottom))}
 }
