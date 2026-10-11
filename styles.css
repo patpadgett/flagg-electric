@@ -97,8 +97,8 @@ p{max-width:65ch}
 .hero-photo{position:relative;overflow:hidden;background:var(--manila);min-height:0}
 .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center}
 .hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(244,240,228,.15) 0%,transparent 15%);pointer-events:none}
-.hero-photo-note{position:absolute;bottom:28px;right:24px;display:flex;flex-direction:column;gap:2px;text-align:right;z-index:3}
-.pencil{font-family:Caveat,'Caveat Fallback','Segoe Script','Bradley Hand',cursive;font-size:22px;color:var(--pencil);text-shadow:0 1px 3px rgba(244,240,228,.9),0 0 10px rgba(244,240,228,.7);transform:rotate(-1deg)}
+.hero-photo-note{display:flex;flex-direction:column;gap:2px;align-items:flex-end;text-align:right;padding:10px 4px 0}
+.pencil{font-family:Caveat,'Caveat Fallback','Segoe Script','Bradley Hand',cursive;font-size:22px;color:var(--pencil);transform:rotate(-1deg)}
 .hero-margin{position:relative;z-index:2;display:flex;align-items:center;gap:0;padding:0;border-top:3px solid var(--toner);background:var(--paper-dark);overflow-x:auto;-webkit-overflow-scrolling:touch}
 .hero-margin span{font-family:Caveat,'Caveat Fallback','Segoe Script','Bradley Hand',cursive;font-size:22px;color:var(--pencil);padding:16px 28px;border-right:1px solid var(--rule);white-space:nowrap}
 .hero-margin span:last-child{border-right:none}
@@ -151,9 +151,8 @@ p{max-width:65ch}
 .about-text h2{font-weight:700;font-size:clamp(44px,6vw,84px);line-height:.9;letter-spacing:-.03em;text-transform:uppercase;color:var(--toner)}
 .about-text p{margin-top:22px;color:var(--pencil);font-size:16px;line-height:1.6;max-width:62ch}
 .about-text .text-link{margin-top:28px}
-.text-link{font-size:14px;font-weight:700;display:inline-flex;gap:14px;align-items:center;text-transform:uppercase;letter-spacing:.06em;color:var(--orange);text-decoration:none;transition:gap .2s;padding:11px 0}
-.text-link:hover{gap:20px;color:var(--orange-deep)}
-.text-link svg{width:20px;height:20px}
+.text-link{font-size:14px;font-weight:700;display:inline-flex;gap:14px;align-items:center;text-transform:uppercase;letter-spacing:.06em;color:var(--orange);text-decoration:none;transition:color .2s;padding:12px 0}
+.text-link:hover{color:var(--orange-deep)}
 
 /* PROOF — rubber stamp */
 .proof{border:3px dashed var(--wax);padding:44px 40px;max-width:420px;justify-self:end;position:relative;background:var(--paper);transform:rotate(-1deg)}
@@ -164,7 +163,7 @@ p{max-width:65ch}
 .proof-label{font-weight:700;font-size:13px;letter-spacing:.16em;color:var(--wax);text-transform:uppercase;border:2px solid var(--wax);padding:4px 10px;transform:rotate(4deg)}
 .proof h3{font-weight:700;font-size:22px;line-height:1.15;margin-top:24px;text-transform:uppercase;letter-spacing:.02em;color:var(--toner)}
 .proof p{font-size:16px;margin-top:12px;color:var(--pencil);line-height:1.55}
-.proof a{font-size:13px;display:inline-block;margin-top:28px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--orange);text-decoration:none;border-bottom:2px solid var(--orange);padding:19px 2px 2px;transition:color .2s}
+.proof a{font-size:13px;display:inline-block;margin-top:28px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--orange);text-decoration:none;border-bottom:2px solid var(--orange);padding:21px 4px 4px;transition:color .2s}
 .proof a:hover{color:var(--orange-deep)}
 
 /* FAQ */
@@ -203,6 +202,7 @@ footer>p{font-size:16px;color:var(--pencil);margin-bottom:28px;line-height:1.55}
 .footer-links{display:flex;gap:28px;flex-wrap:wrap}
 .footer-links a{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--pencil);text-decoration:none;transition:color .2s;display:inline-flex;align-items:center;padding:12px 2px}
 .footer-links a:hover{color:var(--orange)}
+.footer-links a svg,.proof a svg{width:16px;height:16px;vertical-align:-2px;margin-left:4px}
 .footer-brand{transition:opacity .2s}
 .footer-brand:hover{opacity:.75}
 
