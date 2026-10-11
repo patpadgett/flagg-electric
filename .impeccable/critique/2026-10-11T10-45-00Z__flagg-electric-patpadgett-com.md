@@ -1,6 +1,10 @@
 # Critique: flagg-electric.patpadgett.com (re-critique, 4th run)
 
-Method: dual-agent intended (A: design review · B: mechanical). **Assessment A's subagent died on HTTP 429 (model fair-share rate limit) at its third tool call, having written nothing; the parent performed the entire adjudication and mechanical verification in-session.** Every number below was measured by the parent in this session. Assessment B's subagent was still running at the time of writing and its findings are not incorporated here.
+Method: dual-agent intended (A: design review · B: mechanical). **Both subagents ultimately died on HTTP 429 (model fair-share rate limit) — A at its third tool call having written nothing, B after completing its static and contrast analysis but before writing a report.** The parent performed the full adjudication and mechanical verification in-session.
+
+B's surviving measurements, recovered from its live transcript, independently corroborate this snapshot: **21 declared tokens** with the same values, contrast ratios identical to the decimal on every overlapping pair (`--rule` 3.47/3.06, focus ring 6.53/5.74, `--orange-hot` on toner 4.63, `.contact p` paper-on-toner 6.44), and `robots.txt` + `sitemap.xml` both returning **200 live**. Two isolated computations agreeing is the cross-check the dual-agent design exists to provide.
+
+B did not run the detector — it invoked `impeccable` as a bare command and got `command not found`, never resolving the script's absolute path. Every detector number below therefore comes from the parent's own run using the full path `/home/pat/.hermes/skills/impeccable/scripts/impeccable`.
 
 ## Design Health Score
 
