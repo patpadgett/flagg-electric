@@ -1,3 +1,4 @@
+document.documentElement.classList.add('js');
 const menu = document.querySelector('.menu');
 const navigation = document.querySelector('#navigation');
 function closeMenu(){
