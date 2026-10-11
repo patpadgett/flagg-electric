@@ -291,6 +291,14 @@ footer>p{font-size:16px;color:var(--pencil);margin-bottom:28px;line-height:1.55}
   .hero-title .line::after{animation:none;transform:rotate(-.5deg) scaleX(1)}
   .gallery figure{animation:none;opacity:1;transform:none}
   .check::after{transition:opacity .01ms}
+  /* Reduced motion removes spatial TRAVEL, not the state change itself. Each of
+     these already reaches its end state; the rules below make the hover state
+     land there immediately so the feedback survives without the movement. */
+  .hero-cta:hover{transform:none}
+  .service-list article:hover::before{transform:scaleY(1)}
+  .service-list article:hover .check::after{transform:scale(1)}
+  .service-list a:hover{transform:none}
+  .gallery figure:hover::after{transform:scaleX(1)}
   *{transition-duration:.01ms !important;animation-duration:.01ms !important}
   html{scroll-behavior:auto}
 }
