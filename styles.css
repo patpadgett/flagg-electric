@@ -1,6 +1,12 @@
 @font-face{font-family:Barlow;src:url('assets/barlow.ttf') format('truetype');font-weight:400;font-display:swap}
 @font-face{font-family:Barlow;src:url('assets/barlow-bold.ttf') format('truetype');font-weight:700;font-display:swap}
 @font-face{font-family:Caveat;src:url('assets/caveat.ttf') format('truetype');font-weight:400 700;font-display:swap}
+/* Metric-matched fallbacks so a failed font load does not reflow the page.
+   size-adjust values measured by comparing the shipped faces against the
+   fallback faces on the same machine: Barlow is 0.989x Arial, Caveat is
+   0.690x Comic Sans MS. Both are width ratios at the same px size. */
+@font-face{font-family:'Barlow Fallback';src:local('Arial');size-adjust:99%;ascent-override:90%;descent-override:22%}
+@font-face{font-family:'Caveat Fallback';src:local('Comic Sans MS'),local('Segoe Script');size-adjust:69%;ascent-override:105%;descent-override:35%}
 
 :root{
   --paper:#f4f0e4;
@@ -26,7 +32,7 @@
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:30px;scrollbar-color:var(--orange) var(--paper)}
-body{margin:0;color:var(--ink);background:var(--paper);font-family:Barlow,Arial,sans-serif;font-size:18px;line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{margin:0;color:var(--ink);background:var(--paper);font-family:Barlow,'Barlow Fallback',Arial,sans-serif;font-size:18px;line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 ::selection{background:var(--wax);color:var(--paper)}
 a{color:inherit;text-underline-offset:5px}
 button{font:inherit}
@@ -77,7 +83,7 @@ p{max-width:65ch}
 }
 .hero-job-line{display:flex;align-items:baseline;gap:14px;margin-top:18px;padding-top:12px;border-top:2px solid var(--rule);max-width:480px;flex-wrap:wrap}
 .job-label{font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--orange);text-transform:uppercase;flex-shrink:0;border:3px solid var(--orange);padding:3px 10px}
-.job-desc{font-size:16px;color:var(--pencil);line-height:1.45}
+.job-desc{font-size:16px;color:var(--pencil);line-height:1.55}
 .hero-cta{display:inline-flex;align-items:center;gap:16px;background:var(--orange);color:var(--paper);text-decoration:none;padding:16px 26px;margin-top:16px;border:3px solid var(--orange);transition:all .2s;align-self:flex-start;position:relative;box-shadow:0 4px 16px rgba(166,70,25,.2)}
 .hero-cta:hover{background:var(--orange-hot);border-color:var(--orange-hot);transform:translateY(-3px);box-shadow:0 10px 28px rgba(166,70,25,.35)}
 .cta-label{font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
@@ -87,16 +93,16 @@ p{max-width:65ch}
 .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center}
 .hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(244,240,228,.15) 0%,transparent 15%);pointer-events:none}
 .hero-photo-note{position:absolute;bottom:28px;right:24px;display:flex;flex-direction:column;gap:2px;text-align:right;z-index:3}
-.pencil{font-family:Caveat,'Segoe Script','Bradley Hand',cursive;font-size:22px;color:var(--pencil);text-shadow:0 1px 3px rgba(244,240,228,.9),0 0 10px rgba(244,240,228,.7);transform:rotate(-1deg)}
+.pencil{font-family:Caveat,'Caveat Fallback','Segoe Script','Bradley Hand',cursive;font-size:22px;color:var(--pencil);text-shadow:0 1px 3px rgba(244,240,228,.9),0 0 10px rgba(244,240,228,.7);transform:rotate(-1deg)}
 .hero-margin{position:relative;z-index:2;display:flex;align-items:center;gap:0;padding:0;border-top:3px solid var(--toner);background:var(--paper-dark);overflow-x:auto;-webkit-overflow-scrolling:touch}
-.hero-margin span{font-family:Caveat,'Segoe Script','Bradley Hand',cursive;font-size:22px;color:var(--pencil);padding:16px 28px;border-right:1px solid var(--rule);white-space:nowrap}
+.hero-margin span{font-family:Caveat,'Caveat Fallback','Segoe Script','Bradley Hand',cursive;font-size:22px;color:var(--pencil);padding:16px 28px;border-right:1px solid var(--rule);white-space:nowrap}
 .hero-margin span:last-child{border-right:none}
 
 /* SECTIONS — two tiers: section labels quiet, statement headings loud */
 .section{padding:100px 5%;scroll-margin-top:110px}
 .section-head{margin-bottom:48px;max-width:700px}
 .section-head h2{font-weight:700;font-size:clamp(28px,3.2vw,40px);line-height:1;letter-spacing:.04em;text-transform:uppercase;color:var(--toner);padding-bottom:14px;border-bottom:3px solid var(--rule)}
-.section-note{margin-top:14px;font-size:17px;color:var(--pencil);max-width:460px;line-height:1.5}
+.section-note{margin-top:14px;font-size:16px;color:var(--pencil);max-width:460px;line-height:1.55}
 
 /* SERVICES — work order line items */
 .service-list{border-top:4px solid var(--toner)}
@@ -137,7 +143,7 @@ p{max-width:65ch}
 /* ABOUT */
 .about{display:grid;grid-template-columns:1.2fr 1fr;gap:var(--s9);align-items:end}
 .about-text h2{font-weight:700;font-size:clamp(44px,6vw,84px);line-height:.9;letter-spacing:-.03em;text-transform:uppercase;color:var(--toner)}
-.about-text p{margin-top:22px;color:var(--pencil);font-size:17px;line-height:1.6}
+.about-text p{margin-top:22px;color:var(--pencil);font-size:16px;line-height:1.6}
 .about-text .text-link{margin-top:28px}
 .text-link{font-size:14px;font-weight:700;display:inline-flex;gap:14px;align-items:center;text-transform:uppercase;letter-spacing:.06em;color:var(--orange);text-decoration:none;transition:gap .2s}
 .text-link:hover{gap:20px;color:var(--orange-hot)}
@@ -151,7 +157,7 @@ p{max-width:65ch}
 .proof-mark::after{content:'';position:absolute;top:50%;left:-8%;right:-8%;height:2px;background:var(--wax);transform:rotate(-2deg);opacity:.25}
 .proof-label{font-weight:700;font-size:13px;letter-spacing:.16em;color:var(--wax);text-transform:uppercase;border:2px solid var(--wax);padding:4px 10px;transform:rotate(4deg)}
 .proof h3{font-weight:700;font-size:22px;line-height:1.15;margin-top:24px;text-transform:uppercase;letter-spacing:.02em;color:var(--toner)}
-.proof p{font-size:15px;margin-top:12px;color:var(--pencil)}
+.proof p{font-size:16px;margin-top:12px;color:var(--pencil);line-height:1.55}
 .proof a{font-size:12px;display:inline-block;margin-top:28px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--orange);text-decoration:none;border-bottom:2px solid var(--orange);padding-bottom:2px;transition:color .2s}
 .proof a:hover{color:var(--orange-hot)}
 
@@ -165,34 +171,34 @@ summary:hover{color:var(--orange)}
 summary::-webkit-details-marker{display:none}
 summary span{font-size:32px;font-weight:400;color:var(--orange);transition:transform .25s}
 details[open] summary span{transform:rotate(45deg)}
-details p{padding:0 0 30px;color:var(--pencil);font-size:16px;line-height:1.6;max-width:60ch}
+details p{padding:0 0 30px;color:var(--pencil);font-size:16px;line-height:1.55;max-width:60ch}
 details a{color:var(--orange);font-weight:700}
 
 /* CONTACT */
 .contact{display:grid;grid-template-columns:1fr 1fr;gap:var(--s9);align-items:center;background:var(--toner);color:var(--paper)}
 .contact h2{font-weight:700;font-size:clamp(44px,6vw,84px);line-height:.9;letter-spacing:-.03em;text-transform:uppercase}
 .contact .accent{color:var(--orange-hot)}
-.contact p{margin-top:24px;font-size:17px;color:rgba(244,240,228,.75);line-height:1.55}
+.contact p{margin-top:24px;font-size:17px;color:rgba(244,240,228,.75);line-height:1.6}
 .contact-action{display:flex;flex-direction:column;align-items:flex-start;gap:0}
 .contact-action a{display:block;text-decoration:none;margin-bottom:20px}
 .contact-phone{font-weight:700;font-size:clamp(48px,6vw,84px);line-height:.92;letter-spacing:-.03em;color:var(--paper);border-bottom:4px solid var(--orange-hot);padding-bottom:12px;display:block;transition:color .2s}
 .contact-action a:hover .contact-phone{color:var(--orange-hot)}
 .contact-label{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange-hot)}
-.contact-action>p{margin-top:16px;font-size:15px;color:rgba(244,240,228,.6);line-height:1.5}
+.contact-action>p{margin-top:16px;font-size:16px;color:rgba(244,240,228,.75);line-height:1.6}
 
 /* FOOTER */
 footer{background:var(--paper-dark);padding:60px 5% 40px;border-top:2px solid var(--rule)}
 .footer-brand{display:flex;align-items:center;gap:14px;text-decoration:none;margin-bottom:20px}
 .footer-brand img{width:110px;height:auto;object-fit:contain;mix-blend-mode:multiply}
 .footer-name{font-weight:700;font-size:16px;letter-spacing:.06em;text-transform:uppercase;color:var(--toner)}
-footer>p{font-size:15px;color:var(--pencil);margin-bottom:28px}
+footer>p{font-size:16px;color:var(--pencil);margin-bottom:28px;line-height:1.55}
 .footer-links{display:flex;gap:28px;flex-wrap:wrap}
 .footer-links a{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--pencil);text-decoration:none;transition:color .2s}
 .footer-links a:hover{color:var(--orange)}
 
 /* MOBILE CALL BAR */
 .mobile-call{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--orange);color:var(--paper);text-align:center;padding:16px;font-size:16px;font-weight:700;text-decoration:none;z-index:90;border-top:2px solid var(--orange-hot)}
-.mobile-call strong{font-size:18px}
+.mobile-call strong{font-size:18px;font-weight:700}
 
 /* RESPONSIVE */
 @media(max-width:1050px){

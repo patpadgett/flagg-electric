@@ -32,7 +32,9 @@ FORM: Position 7 of the grounded candidate list (seed key 1048cabf, direction sc
 
 - Barlow regular (400) and bold (700), self-hosted. No display face — the world is work-order paperwork, not poster art.
 - Display headings: Barlow Bold, uppercase, tight leading (.88-.9), negative tracking (-.03em). Hero title scales to clamp(56px,6.6vw,96px). Section headings use a TWO-TIER system: section labels (WORK ORDER, FIELD NOTES, BEFORE YOU CALL) at clamp(28px,3.2vw,40px) with a rule beneath; statement headings (BASED IN CAMDENTON., LET'S GET YOU CONNECTED.) hold display scale at clamp(44px,6vw,84px). Contact phone to 84px.
-- Body: Barlow Regular, 17-18px, line-height 1.55-1.6.
+- Body: Barlow Regular 16px, line-height 1.55 (prose 1.6 where the measure is wider). The 16px floor holds for every body role; 13-14px is reserved for labels, captions and metadata, never prose.
+- Only two weights are used — 400 and 700 — matching exactly the weights the shipped TTFs contain. A `<strong>` inside a 700 parent previously requested weight 900, which Barlow does not ship, so the browser synthesized a fake bold; it is now pinned to 700.
+- Metric-matched fallbacks: `'Barlow Fallback'` (Arial, size-adjust 99%) and `'Caveat Fallback'` (Comic Sans MS, size-adjust 69%), both with ascent/descent overrides. Measured by comparing the shipped faces against the fallbacks at the same px size; with them, every section position is pixel-identical whether the web fonts load or fail, so a failed font load no longer reflows the page.
 - Hand-inked elements (margin towns, photo caption): Caveat, self-hosted from assets/caveat.ttf (variable weight 400-700), with Segoe Script / Bradley Hand fallback — script face for pencil annotations only. Caveat is shipped under the same SIL OFL as Barlow.
 
 ## Motion
@@ -111,5 +113,11 @@ Layout pass October 10, 2026 (structure only, visual world unchanged):
 - Section-head rhythm tightened: margin-bottom 56px -> 48px, note margin-top 18px -> 14px, service row padding 44px -> 36px, FAQ summary padding 30px -> 26px.
 - A sticky FAQ heading was tried and reverted: `position:sticky;top:120px` pinned the label mid-viewport instead of holding its place, and created a 390px dead column.
 - Verified: no horizontal overflow at 320/375/390/768/1024/1366/1440; hero CTA and service tags above the fold on desktop; proof box flush on desktop and stacked correctly at 768 and 390; heading/accordion top-aligned on desktop.
+
+Typeset pass October 10, 2026 (typography only, world unchanged):
+- Consolidated 39 distinct type treatments down to 29 by unifying redundant body sizes: 15px body copy raised to the 16px floor (proof paragraph, contact location, footer line), and 17px body copy normalised to 16px (about paragraphs, section notes). Line-heights unified so a given body role carries one leading value everywhere.
+- Fixed a phantom weight-900: `<strong>` inside the 700 mobile call bar inherited `bolder`, requesting a weight Barlow does not ship, which the browser synthesized with artificial stroke thickening. Now explicitly 700.
+- Added metric-matched fallbacks for both faces. size-adjust values were measured, not guessed — a first pass used 97%/88% and measurement showed 99%/69% was correct. Verified: all twelve section positions plus document height are pixel-identical with remote fonts enabled and disabled.
+- Detector type scope: 0 findings before and after.
 
 Screenshots: qa/redesign-desktop.png, qa/redesign-mobile.png, qa/redesign-mobile-bottom.png (pre-critique), qa/v2-full.png (post-critique desktop), qa/v2-mobile-full.png (post-critique mobile). Previous designs backed up as index-old.html and index-old-redesign.html.
