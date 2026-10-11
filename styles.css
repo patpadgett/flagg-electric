@@ -12,24 +12,21 @@
   --paper:#f4f0e4;
   --paper-dark:#e8e2d0;
   --manila:#e0d5b8;
-  --grid:#c8bfa0;
   --grid-light:#d8d0b8;
   --toner:#1e3a5f;
-  --toner-light:#3a5a80;
   --orange:#a64619;
   --orange-hot:#f08a4e;
   --orange-hot-light:#f7b894;
   --orange-deep:#8f3c14;
   --wax:#a82a22;
-  --wax-light:#e05548;
   --pencil:#5a5348;
   --pencil-light:#655f52;
   --ink:#2a2620;
   --rule:#8a7f66;
-  --rule-dark:#7a7058;
+  --paper-on-toner:rgba(244,240,228,.75);
   /* spacing scale — 4px base */
-  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px;
-  --s7:48px; --s8:64px; --s9:80px; --s10:100px;
+  --s4:16px; --s5:24px; --s6:32px;
+  --s7:48px; --s8:64px; --s9:80px;
 }
 
 *{box-sizing:border-box}
@@ -188,14 +185,14 @@ details a:hover{color:var(--orange-deep)}
 .contact{display:grid;grid-template-columns:1fr 1fr;gap:var(--s9);align-items:center;background:var(--toner);color:var(--paper)}
 .contact h2{font-weight:700;font-size:clamp(44px,6vw,84px);line-height:.9;letter-spacing:-.03em;text-transform:uppercase}
 .contact .accent{color:var(--orange-hot)}
-.contact p{margin-top:24px;font-size:16px;color:rgba(244,240,228,.75);line-height:1.65;max-width:58ch}
+.contact p{margin-top:24px;font-size:16px;color:var(--paper-on-toner);line-height:1.65;max-width:58ch}
 .contact-action{display:flex;flex-direction:column;align-items:flex-start;gap:0}
 .contact-action a{display:block;text-decoration:none;margin-bottom:20px;transition:opacity .2s}
 .contact-action a:hover{opacity:.85}
 .contact-phone{font-weight:700;font-size:clamp(48px,6vw,84px);line-height:.9;letter-spacing:-.03em;color:var(--paper);border-bottom:4px solid var(--orange-hot);padding-bottom:12px;display:block;transition:color .2s}
 .contact-action a:hover .contact-phone{color:var(--orange-hot)}
 .contact-label{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange-hot)}
-.contact-action>p{margin-top:16px;font-size:16px;color:rgba(244,240,228,.75);line-height:1.65}
+.contact-action>p{margin-top:16px;font-size:16px;color:var(--paper-on-toner);line-height:1.65}
 
 /* FOOTER */
 footer{background:var(--paper-dark);padding:60px 5% 40px;border-top:2px solid var(--rule)}
