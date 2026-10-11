@@ -170,7 +170,7 @@ p{max-width:65ch}
 /* FAQ */
 .questions{display:grid;grid-template-columns:1fr 1.3fr;gap:var(--s8);background:var(--paper-dark);align-items:start}
 .questions .section-head{margin-bottom:0;align-self:start}
-.faq{border-top:4px solid var(--toner)}
+.faq{border-top:4px solid var(--toner);padding-right:var(--s4)}
 details{border-bottom:3px solid var(--rule)}
 summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:20px;padding:26px 0;gap:var(--s4);letter-spacing:.01em;text-transform:uppercase;color:var(--toner);transition:color .15s}
 summary:hover{color:var(--orange)}

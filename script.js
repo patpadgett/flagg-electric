@@ -11,3 +11,12 @@ if(menu && navigation){
   document.addEventListener('keydown',event=>{if(event.key==='Escape' && menu.getAttribute('aria-expanded')==='true'){closeMenu();menu.focus();}});
   window.matchMedia('(min-width:761px)').addEventListener('change',closeMenu);
 }
+/* <details> removes its native disclosure marker, so the open/closed state
+   is otherwise invisible to assistive tech. Mirror it onto the summary. */
+document.querySelectorAll('details').forEach(d=>{
+  const s=d.querySelector('summary');
+  if(!s)return;
+  const sync=()=>s.setAttribute('aria-expanded',String(d.open));
+  sync();
+  d.addEventListener('toggle',sync);
+});
