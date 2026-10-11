@@ -1,6 +1,6 @@
-@font-face{font-family:Barlow;src:url('assets/barlow.ttf') format('truetype');font-weight:400;font-display:swap}
-@font-face{font-family:Barlow;src:url('assets/barlow-bold.ttf') format('truetype');font-weight:700;font-display:swap}
-@font-face{font-family:Caveat;src:url('assets/caveat.ttf') format('truetype');font-weight:400 700;font-display:swap}
+@font-face{font-family:Barlow;src:url('assets/barlow.woff2') format('woff2'),url('assets/barlow.ttf') format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:Barlow;src:url('assets/barlow-bold.woff2') format('woff2'),url('assets/barlow-bold.ttf') format('truetype');font-weight:700;font-display:swap}
+@font-face{font-family:Caveat;src:url('assets/caveat.woff2') format('woff2'),url('assets/caveat.ttf') format('truetype');font-weight:400 700;font-display:swap}
 /* Metric-matched fallbacks so a failed font load does not reflow the page.
    size-adjust values measured by comparing the shipped faces against the
    fallback faces on the same machine: Barlow is 0.989x Arial, Caveat is

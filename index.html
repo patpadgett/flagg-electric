@@ -1,9 +1,12 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f4f0e4"><title>Flagg Electric LLC | Camdenton & the Lake Area</title><meta name="description" content="Flagg Electric LLC provides residential, commercial and dock electrical services in Camdenton and the Lake area. Call (573) 286-3406 to discuss your project."><link rel="icon" type="image/png" href="assets/favicon.png"><link rel="apple-touch-icon" href="assets/favicon.png"><link rel="stylesheet" href="styles.css"></head><body><a class="skip" href="#main">Skip to content</a>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f4f0e4"><title>Flagg Electric LLC | Camdenton & the Lake Area</title><meta name="description" content="Flagg Electric LLC provides residential, commercial and dock electrical services in Camdenton and the Lake area. Call (573) 286-3406 to discuss your project."><link rel="icon" type="image/png" href="assets/favicon.png"><link rel="apple-touch-icon" href="assets/favicon.png"><link rel="stylesheet" href="styles.css"><link rel="preload" href="assets/dock-night-750.webp" as="image" type="image/webp" fetchpriority="high"><link rel="preload" href="assets/barlow.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/barlow-bold.woff2" as="font" type="font/woff2" crossorigin></head><body><a class="skip" href="#main">Skip to content</a>
 
 <header class="header">
   <a class="brand" href="#main" aria-label="Flagg Electric LLC home">
-    <img src="assets/business-profile.jpg" alt="Flagg Electric" width="212" height="120">
+    <picture>
+      <source type="image/webp" srcset="assets/business-profile-320.webp 320w" sizes="150px">
+      <img src="assets/business-profile.jpg" alt="Flagg Electric" width="212" height="120">
+    </picture>
   </a>
   <nav id="navigation" aria-label="Main navigation">
     <a href="#services">Services</a>
@@ -41,7 +44,10 @@
       </div>
     </div>
     <div class="hero-photo">
-      <img src="assets/dock-night.jpg" alt="Covered boat dock lit at night in Rocky Mount, new dock wiring by Flagg Electric" width="750" height="1000" fetchpriority="high">
+      <picture>
+        <source type="image/webp" srcset="assets/dock-night-750.webp 750w, assets/dock-night-1200.webp 1200w" sizes="(max-width: 760px) 100vw, 50vw">
+        <img src="assets/dock-night.jpg" alt="Covered boat dock lit at night in Rocky Mount, new dock wiring by Flagg Electric" width="750" height="1000" fetchpriority="high">
+      </picture>
       <div class="hero-photo-note">
         <span class="pencil">Rocky Mount —</span>
         <span class="pencil">new dock wiring</span>
@@ -103,15 +109,24 @@
   </div>
   <div class="gallery">
     <figure class="wide">
-      <img src="assets/dock-day.jpg" alt="Covered boat slip on a Lake of the Ozarks dock at golden hour, new dock wiring by Flagg Electric in Sunrise Beach" width="1000" height="754" loading="lazy">
+      <picture>
+        <source type="image/webp" srcset="assets/dock-day-750.webp 750w" sizes="(max-width: 760px) 100vw, (max-width: 1050px) 50vw, 38vw">
+        <img src="assets/dock-day.jpg" alt="Covered boat slip on a Lake of the Ozarks dock at golden hour, new dock wiring by Flagg Electric in Sunrise Beach" width="1000" height="754" loading="lazy">
+      </picture>
       <figcaption><strong>Dock wiring</strong><span>Sunrise Beach, MO</span></figcaption>
     </figure>
     <figure>
-      <img src="assets/panel.jpg" alt="Electrical load center with breakers and labeled circuits during a 200 amp panel upgrade" width="562" height="1000" loading="lazy">
+      <picture>
+        <source type="image/webp" srcset="assets/panel-562.webp 562w" sizes="(max-width: 760px) 100vw, (max-width: 1050px) 50vw, 27vw">
+        <img src="assets/panel.jpg" alt="Electrical load center with breakers and labeled circuits during a 200 amp panel upgrade" width="562" height="1000" loading="lazy">
+      </picture>
       <figcaption><strong>200-amp panel upgrade</strong><span>Breakers &amp; circuits</span></figcaption>
     </figure>
     <figure>
-      <img src="assets/dock-fan.jpg" alt="Covered swim platform with an outdoor ceiling fan and light wired by Flagg Electric" width="1000" height="750" loading="lazy">
+      <picture>
+        <source type="image/webp" srcset="assets/dock-fan-750.webp 750w" sizes="(max-width: 760px) 100vw, (max-width: 1050px) 50vw, 27vw">
+        <img src="assets/dock-fan.jpg" alt="Covered swim platform with an outdoor ceiling fan and light wired by Flagg Electric" width="1000" height="750" loading="lazy">
+      </picture>
       <figcaption><strong>Fan &amp; light at the dock</strong><span>Swim platform wiring</span></figcaption>
     </figure>
   </div>
@@ -181,7 +196,10 @@
 
 <footer>
   <a class="footer-brand" href="#main" aria-label="Back to top">
-    <img src="assets/business-profile.jpg" alt="" width="140" height="79">
+    <picture>
+      <source type="image/webp" srcset="assets/business-profile-320.webp 320w" sizes="110px">
+      <img src="assets/business-profile.jpg" alt="" width="140" height="79">
+    </picture>
     <span class="footer-name">FLAGG ELECTRIC LLC</span>
   </a>
   <p>Electrical work for home, work &amp; lake life.</p>
